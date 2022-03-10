@@ -24,11 +24,11 @@ struct product {
     char str[100];
     int len;
 }pro[20];
-// no of productions in form A->ß
+// no of productions in form A->ÃŸ
 int no_pro;
 char first[26][TSIZE];
 char follow[26][TSIZE];
-// stores first of each production in form A->ß
+// stores first of each production in form A->ÃŸ
 char first_rhs[100][TSIZE];
 // check if the symbol is nonterminal
 int isNT(char c) {
@@ -149,7 +149,7 @@ void add_FIRST_A_to_FIRST_RHS__B(char A, int B) {
             first_rhs[B][i] = first[A - 'A'][i] || first_rhs[B][i];
     }
 }
-// Calculates FIRST(ß) for each A->ß
+// Calculates FIRST(ÃŸ) for each A->ÃŸ
 void FIRST_RHS() {
     int i, j;
     int t = 0;
@@ -210,8 +210,8 @@ int main() {
             printf("\n");
         }
     }
-    // display first of each variable ß
-    // in form A->ß
+    // display first of each variable ÃŸ
+    // in form A->ÃŸ
     printf("\n");
     for (i = 0; i < no_pro; ++i) {
         printf("FIRST OF %s: ", pro[i].str);
